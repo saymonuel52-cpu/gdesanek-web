@@ -1,4 +1,4 @@
-﻿export interface CatalogItem { type: string; label: string; group: string; power?: number; h?: number }
+export interface CatalogItem { type: string; label: string; group: string; power?: number; h?: number }
 export const CATALOG: CatalogItem[] = [
   { type: 'socket_b1', label: 'Розетка 220В', group: 'Розетки', power: 100, h: 30 },
   { type: 'socket_b2', label: 'Розетка 220В сдвоенная', group: 'Розетки', power: 200, h: 30 },
@@ -27,3 +27,11 @@ export const CATALOG: CatalogItem[] = [
   { type: 'sensor_alarm', label: 'Датчик охраны (ОХР)', group: 'Слаботочка', power: 5, h: 220 },
 ];
 export const GROUPS = [...new Set(CATALOG.map(i => i.group))];
+
+export function getItemByType(type: string): CatalogItem | undefined {
+  return CATALOG.find((i) => i.type === type);
+}
+
+export function getItemsByGroup(group: string): CatalogItem[] {
+  return CATALOG.filter((i) => i.group === group);
+}
