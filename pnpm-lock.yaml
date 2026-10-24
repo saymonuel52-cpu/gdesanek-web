@@ -17,9 +17,6 @@ importers:
 
   apps/web:
     dependencies:
-      '@gdesanek/canvas':
-        specifier: workspace:*
-        version: link:../../packages/canvas
       '@gdesanek/core':
         specifier: workspace:*
         version: link:../../packages/core
@@ -75,6 +72,15 @@ importers:
         version: 5.9.3
 
   packages/core:
+    devDependencies:
+      typescript:
+        specifier: ^5.5.0
+        version: 5.9.3
+      vitest:
+        specifier: ^2.1.0
+        version: 2.1.9
+
+  packages/geometry:
     devDependencies:
       typescript:
         specifier: ^5.5.0

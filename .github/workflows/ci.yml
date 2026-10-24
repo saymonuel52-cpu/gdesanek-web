@@ -24,7 +24,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck
-        run: pnpm --filter @gdesanek/core typecheck
+        run: pnpm -r --if-present typecheck
 
       - name: Test
-        run: pnpm --filter @gdesanek/core test
+        run: pnpm -r --if-present test
